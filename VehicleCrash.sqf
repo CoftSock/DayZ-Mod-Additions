@@ -14,14 +14,10 @@ _fadeFire = _this select 9;
 diag_log("CRASHSPAWNER: Starting spawn logic for Crash Spawner");
 
 while {1 == 1} do {
-	// Allows the variance to act as +/- from the spawn frequency timer
     _timeAdjust = ((round(random(_variance * 2))) - _variance);
 	_timeToSpawn = time + _frequency + _timeAdjust;
+	_crashModel = ["HMMWVWreck","UAZWreck","UralWreck"] call BIS_fnc_selectRandom;
 
-	//Selecting random crash type
-	_crashModel = ["HMMWVWreck","UAZWreck"] call BIS_fnc_selectRandom;
-
-	//selecting loottable
 	if (_crashModel == "UAZWreck") then {
 		_lootTable = "HeliCrashEAST";
 	} else {
@@ -29,15 +25,10 @@ while {1 == 1} do {
 	};
 
 	_crashName = getText (configFile >> "CfgVehicles" >> _crashModel >> "displayName");
-
-	//diag_log(format["CRASHSPAWNER: %1%2 chance to spawn '%3' with loot table '%4' at %5", round(_spawnChance * 100), '%', _crashName, _lootTable, _timeToSpawn]);
-
-	// Apprehensive about using one giant long sleep here given server time variances over the life of the server daemon
 	while {(_spawnOnStart <= 0) AND {(time < _timeToSpawn)}} do {
 		sleep (_frequency / 4);
 	};
 
-	// Percentage roll
 	if (random 1 <= _spawnChance) then {
 		_debugarea = getMarkerPos "respawn_west";
 		_crash = _crashModel createVehicleLocal _debugarea;
@@ -110,29 +101,19 @@ while {1 == 1} do {
 							createVehicle ["Sign_sphere100cm_EP1", [_lootpos select 0, _lootpos select 1, 0.30], [], 0, "CAN_COLLIDE"];
 						};
 					 };
-					 
-					//diag_log(format["CRASHSPAWNER: Loot spawn at '%1 - %3' with loot table '%2'", _crashName, str(_itemType),_lootpos]);
+					
 					sleep 0.001;
 				};
-			}; // loot loop
+			}; 
 			
 			_crash = createVehicle [_crashModel,_position, [], 0, "CAN_COLLIDE"];
 			_crash setDir _crashAngle;
-
-			// Using "custom" wrecks (using the destruction model of a vehicle vs. a prepared wreck model) will result
-			// in the model spawning halfway in the ground.  To combat this, an OPTIONAL configuration can be tied to
-			// the CfgVehicles class you've created for the custom wreck to define how high above the ground it should
-			// spawn.  This is optional.
 			_config = configFile >> "CfgVehicles" >> _crashModel >> "heightAdjustment";
 			_newHeight = 0;
 			if ( isNumber(_config)) then {
 				_newHeight = getNumber(_config);
 			};
-
-			// Must setPos after a setDir otherwise the wreck won't level itself with the terrain
 			_crash setPos [(_position select 0), (_position select 1), _newHeight];
-
-			// I don't think this is needed (you can't get "in" a crash), but it was in the original DayZ Crash logic
 			dayz_serverObjectMonitor set [count dayz_serverObjectMonitor,_crash];
 			_crash setVariable ["ObjectID",1,true];
 
