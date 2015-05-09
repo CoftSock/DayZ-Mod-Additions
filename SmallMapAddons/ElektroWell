@@ -1,0 +1,11 @@
+if (isServer) then {
+
+_vehicle_0 = objNull;
+if (true) then
+{
+  _this = createVehicle ["Land_pumpa", [10449.073, 2419.604, -0.025136495], [], 0, "CAN_COLLIDE"];
+  _vehicle_0 = _this;
+  _this setDir 1.8570122;
+  _this setPos [10449.073, 2419.604, -0.025136495];
+};
+};
