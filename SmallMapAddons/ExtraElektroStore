@@ -1,0 +1,102 @@
+if (isServer) then {
+
+_vehicle_4 = objNull;
+if (true) then
+{
+  _this = createVehicle ["MAP_A_GeneralStore_01a", [10088.083, 1988.4254, -0.0070003476], [], 0, "CAN_COLLIDE"];
+  _vehicle_4 = _this;
+  _this setDir 164.30881;
+  _this setPos [10088.083, 1988.4254, -0.0070003476];
+};
+
+_vehicle_5 = objNull;
+if (true) then
+{
+  _this = createVehicle ["Land_Misc_Cargo2E_EP1", [10103.264, 2005.9869, -1.4305115e-005], [], 0, "CAN_COLLIDE"];
+  _vehicle_5 = _this;
+  _this setDir -58.87278;
+  _this setPos [10103.264, 2005.9869, -1.4305115e-005];
+};
+
+_vehicle_7 = objNull;
+if (true) then
+{
+  _this = createVehicle ["Garbage_container", [10071.457, 1977.6418, 4.7683716e-006], [], 0, "CAN_COLLIDE"];
+  _vehicle_7 = _this;
+  _this setDir -16.850946;
+  _this setPos [10071.457, 1977.6418, 4.7683716e-006];
+};
+
+_vehicle_9 = objNull;
+if (true) then
+{
+  _this = createVehicle ["Garbage_container", [10072.364, 1975.1364, 2.8610229e-006], [], 0, "CAN_COLLIDE"];
+  _vehicle_9 = _this;
+  _this setDir -16.850946;
+  _this setPos [10072.364, 1975.1364, 2.8610229e-006];
+};
+
+_vehicle_12 = objNull;
+if (true) then
+{
+  _this = createVehicle ["Paleta1", [10071.75, 1994.5356, -2.8610229e-006], [], 0, "CAN_COLLIDE"];
+  _vehicle_12 = _this;
+  _this setPos [10071.75, 1994.5356, -2.8610229e-006];
+};
+
+_vehicle_13 = objNull;
+if (true) then
+{
+  _this = createVehicle ["Paleta2", [10067.277, 1993.5374, -9.5367432e-007], [], 0, "CAN_COLLIDE"];
+  _vehicle_13 = _this;
+  _this setPos [10067.277, 1993.5374, -9.5367432e-007];
+};
+
+_vehicle_16 = objNull;
+if (true) then
+{
+  _this = createVehicle ["TrapTripwireSmoke", [10061.554, 1973.4413, 0.11724304], [], 0, "CAN_COLLIDE"];
+  _vehicle_16 = _this;
+  _this setPos [10061.554, 1973.4413, 0.11724304];
+};
+
+_vehicle_17 = objNull;
+if (true) then
+{
+  _this = createVehicle ["Barrels", [10069.835, 1993.6511, -4.7683716e-006], [], 0, "CAN_COLLIDE"];
+  _vehicle_17 = _this;
+  _this setPos [10069.835, 1993.6511, -4.7683716e-006];
+};
+
+_vehicle_18 = objNull;
+if (true) then
+{
+  _this = createVehicle ["MAP_flower_02", [10072.985, 1973.5837, -2.8610229e-006], [], 0, "CAN_COLLIDE"];
+  _vehicle_18 = _this;
+  _this setPos [10072.985, 1973.5837, -2.8610229e-006];
+};
+
+_vehicle_19 = objNull;
+if (true) then
+{
+  _this = createVehicle ["MAP_flower_01", [10074.81, 1973.1334, -6.1511993e-005], [], 0, "CAN_COLLIDE"];
+  _vehicle_19 = _this;
+  _this setPos [10074.81, 1973.1334, -6.1511993e-005];
+};
+
+_vehicle_20 = objNull;
+if (true) then
+{
+  _this = createVehicle ["MAP_flower_02", [10097.464, 1979.5149, -3.4809113e-005], [], 0, "CAN_COLLIDE"];
+  _vehicle_20 = _this;
+  _this setPos [10097.464, 1979.5149, -3.4809113e-005];
+};
+
+_vehicle_21 = objNull;
+if (true) then
+{
+  _this = createVehicle ["MAP_flower_01", [10096.101, 1987.1382, 1.9073486e-006], [], 0, "CAN_COLLIDE"];
+  _vehicle_21 = _this;
+  _this setPos [10096.101, 1987.1382, 1.9073486e-006];
+};
+};
